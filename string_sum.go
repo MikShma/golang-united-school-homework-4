@@ -48,4 +48,5 @@ func StringSum(input string) (output string, err error) {
 			return strconv.Itoa(a + b), nil
 		}
 	}
+	return "", nil
 }
