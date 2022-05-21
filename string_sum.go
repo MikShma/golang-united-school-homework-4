@@ -31,7 +31,7 @@ func StringSum(input string) (output string, err error) {
 	if input == "" {
 		return "", fmt.Errorf("my err: %w", errorEmptyInput)
 	}
-	if strings.Count(input, "+")+strings.Count(input, "-") > 2 {
+	if strings.Count(input, "+")+strings.Count(input, "-") > 2 || input[0] == '+' {
 		return "", fmt.Errorf("my err: %w", errorNotTwoOperands)
 	}
 	k := len(input)
@@ -48,5 +48,5 @@ func StringSum(input string) (output string, err error) {
 			return strconv.Itoa(a + b), nil
 		}
 	}
-	return "", nil
+	return "", fmt.Errorf("my err: %w", errorNotTwoOperands)
 }
