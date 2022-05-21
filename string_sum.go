@@ -45,7 +45,7 @@ func StringSum(input string) (output string, err error) {
 			if err2 != nil {
 				return "", fmt.Errorf("my err: %w", err2)
 			}
+			return strconv.Itoa(a + b), nil
 		}
 	}
-	return strconv.Itoa(a + b), nil
 }
