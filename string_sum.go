@@ -31,7 +31,7 @@ func StringSum(input string) (output string, err error) {
 	if input == "" {
 		return "", fmt.Errorf("my err: %w", errorEmptyInput)
 	}
-	if strings.Count(input, "+")+strings.Count(input, "-") > 2 || input[0] == '+' {
+	if strings.Count(input, "+")+strings.Count(input, "-") > 2 || strings.Count(input, "+") > 1{
 		return "", fmt.Errorf("my err: %w", errorNotTwoOperands)
 	}
 	k := len(input)
